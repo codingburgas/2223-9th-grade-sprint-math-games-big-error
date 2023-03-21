@@ -48,7 +48,7 @@ int main()
 
 	}
 	/* Level 1 */
-	cout << "LEVEL 1 : Right shift bitwise operator quiz ( YOU HAVE ONLY 15 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+	cout << "LEVEL 1 : Right shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
 	for (int i = 1; i <= 3; i++)
 	{
 		srand(time(0));
@@ -59,10 +59,10 @@ int main()
 		cout << "Question" << i << " ::  " << firstNum << " >> " << secondNum << " = ";
 		int numInput;
 		time_t start = time(0);
-		int y = 15;
+		int y = 10;
 		while (!_kbhit())
 		{
-			if (abs(time(0) - start) > 15)
+			if (abs(time(0) - start) > 10)
 			{
 				j = 1;
 				break;
@@ -76,7 +76,7 @@ int main()
 		else
 		{
 			cin >> numInput;
-			if ((time(0) - start) > 15)
+			if ((time(0) - start) > 10)
 			{
 				cout << "Time's Up!!";
 				j = 2;
