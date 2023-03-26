@@ -31,7 +31,7 @@ void trophy()
 		}
 		newfile.close(); 
 	}
-}
+} 
 
 void toBinary(int num)
 {
