@@ -232,6 +232,11 @@ int main()
 		if (j == 2)
 		{
 			cout << "\n\nGAME OVER!!!!!\nYour Score (( " << score << " ))\n\n";
+		}
+		else
+		{
+			cout << "You completed the game!!!" << endl;
+			cout << "You have won this trophy!!!" << endl;
 			trophy();
 			cout << endl;
 		}
