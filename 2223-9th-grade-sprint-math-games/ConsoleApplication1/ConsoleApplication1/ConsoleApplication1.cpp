@@ -5,7 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
-
+using namespace std;
 void binarioText()
 {
 	fstream newfile;
@@ -17,6 +17,19 @@ void binarioText()
 			cout << str << endl; //print the data of the string
 		}
 		newfile.close(); //close the file object.
+	}
+}
+void trophy()
+{
+	fstream newfile;
+
+	newfile.open("..\\..\\..\\textFiles\\Trophy.txt", ios::in); 
+	if (newfile.is_open()) { 
+		string str;
+		while (getline(newfile, str)) { 
+			cout << str << endl; 
+		}
+		newfile.close(); 
 	}
 }
 
@@ -31,7 +44,7 @@ void toBinary(int num)
 
 }
 
-using namespace std;
+
 
 int j;
 int score(0);
@@ -172,8 +185,8 @@ int main()
 			srand(time(0));
 			int H = rand() % 10 + 3;
 			int K = rand() % 10 + 3;
-			A1 = H;
-			B1 = K;
+			numberOne = H;
+			numberTwo = K;
 			cout << "Hint: " << numberOne << " is ";
 			toBinary(H);
 			cout << " and " << numberTwo << " is ";
@@ -219,6 +232,8 @@ int main()
 		if (j == 2)
 		{
 			cout << "\n\nGAME OVER!!!!!\nYour Score (( " << score << " ))\n\n";
+			trophy();
+			cout << endl;
 		}
 	}
 
