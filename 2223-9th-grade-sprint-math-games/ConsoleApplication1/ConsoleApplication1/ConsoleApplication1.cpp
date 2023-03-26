@@ -4,6 +4,22 @@
 #include <conio.h>
 #include <string>
 #include <iomanip>
+#include <fstream>
+
+void binarioText()
+{
+	fstream newfile;
+
+	newfile.open("..\\..\\..\\textFiles\\Binario.txt", ios::in); //open a file to perform read operation using file object
+	if (newfile.is_open()) { //checking whether the file is open
+		string str;
+		while (getline(newfile, str)) { //read data from file object and put it into string.
+			cout << str << endl; //print the data of the string
+		}
+		newfile.close(); //close the file object.
+	}
+}
+
 void toBinary(int num)
 {
 	if (num == 0)
@@ -23,6 +39,8 @@ string username;
 
 int main()
 {
+	binarioText();
+	cout << endl;
 	cout << endl;
 	bool flag = true;
 
@@ -32,7 +50,7 @@ int main()
 		score = 0;
 		/* Introduction : */
 		cout << "Welcome to";
-		cout << " MATH QUIZ GAME!                                           ";
+		cout << " Binario Game!                                           ";
 		cout << "\n\n=========================\n\nPlease enter your name : ";
 		cin >> username;
 		cout << "\n\n=========================\n\nHello " << username << " !\n\n";
@@ -141,6 +159,58 @@ int main()
 			}
 			if (j == 2) break;
 
+			score += 10;
+		}
+	}
+	/* Level 3  */
+	int numberOne, numberTwo;
+	for (int k = 1; j != 2 && k != 2; k++)
+	{
+		cout << "LEVEL 3 : Bitwise & Quiz ( YOU HAVE ONLY 15 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+		for (int i = 1; i <= 5; i++)
+		{
+			srand(time(0));
+			int H = rand() % 10 + 3;
+			int K = rand() % 10 + 3;
+			A1 = H;
+			B1 = K;
+			cout << "Hint: " << numberOne << " is ";
+			toBinary(H);
+			cout << " and " << numberTwo << " is ";
+			toBinary(K);
+			cout << endl;
+			cout << "Question" << i << " ::  " << numberOne << " & " << numberTwo << " = ";
+			int numInput;
+			time_t start = time(0);
+			while (!_kbhit())
+			{
+				if (abs(time(0) - start) > 15)
+				{
+					j = 1;
+					break;
+				}
+			}
+			if (j == 1)
+			{
+				cout << "Time's Up!!";
+				j = 2;
+			}
+			else
+			{
+				cin >> numInput;
+				if ((time(0) - start) > 15)
+				{
+					cout << "Time's Up!!";
+					j = 2;
+				}
+				else if (numInput == (numberOne & numberTwo)) cout << " Good Job!!!!\n\n";
+				else
+				{
+					cout << "Wrong Answer!!";
+					j = 2;
+				}
+			}
+			if (j == 2) break;
 			score += 10;
 		}
 	}
