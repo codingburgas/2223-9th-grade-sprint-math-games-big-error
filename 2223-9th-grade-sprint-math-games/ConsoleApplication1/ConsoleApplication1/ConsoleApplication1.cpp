@@ -4,7 +4,6 @@
 #include <conio.h>
 #include <string>
 #include <iomanip>
-#include <cstdio>
 int toBinary(int x)
 {
 	int rem;
@@ -147,8 +146,8 @@ int main()
 					j = 2;
 				}
 			}
+			if (j == 2) break;
+			score += 10;
 		}
-		if (j == 2) break;
-		score += 10;
 	}
 	}
