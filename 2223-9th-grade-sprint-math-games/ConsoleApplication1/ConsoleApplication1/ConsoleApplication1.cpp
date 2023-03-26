@@ -4,23 +4,16 @@
 #include <conio.h>
 #include <string>
 #include <iomanip>
-int toBinary(int x)
+void toBinary(int num)
 {
-	int rem;
-	int converted = 0;
-	while (x > 1)
+	if (num == 0)
 	{
-		rem = x % 2;
-		x /= 2;
-		converted += rem;
-		converted *= 10;
+		return;
 	}
+	toBinary(num / 2);
+	cout << num % 2;
 
-	converted += x;
-
-	return converted;
 }
-
 
 using namespace std;
 
