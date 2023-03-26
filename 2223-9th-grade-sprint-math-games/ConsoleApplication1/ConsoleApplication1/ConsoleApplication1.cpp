@@ -82,7 +82,7 @@ int main()
 
 	}
 	/* Level 1 */
-	cout << "LEVEL 1 : Left shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+	cout << "LEVEL 1 : Right shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
 	for (int i = 1; i <= 3; i++)
 	{
 		srand(time(0));
@@ -130,7 +130,7 @@ int main()
 	/* Level 2 */
 	for (int Y = 1; j != 2 && Y != 2; Y++)
 	{
-		cout << "LEVEL 2 : Right shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+		cout << "LEVEL 2 : Left shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
 		for (int i = 1; i <= 3; i++)
 		{
 			srand(time(0));
