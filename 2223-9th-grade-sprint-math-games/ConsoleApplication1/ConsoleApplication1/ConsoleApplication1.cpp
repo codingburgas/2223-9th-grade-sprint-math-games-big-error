@@ -5,7 +5,22 @@
 #include <string>
 #include <iomanip>
 #include <cstdio>
+int toBinary(int x)
+{
+	int rem;
+	int converted = 0;
+	while (x > 1)
+	{
+		rem = x % 2;
+		x /= 2;
+		converted += rem;
+		converted *= 10;
+	}
 
+	converted += x;
+
+	return converted;
+}
 
 
 using namespace std;
@@ -13,11 +28,7 @@ using namespace std;
 int j;
 int score(0);
 string username;
-int integerCheck(int num2)
-{
-	int num1 = (rand() % 1 + 5) * pow(2, num2);
-	return num1;
-}
+
 int main()
 {
 	cout << endl;
@@ -53,8 +64,9 @@ int main()
 	{
 		srand(time(0));
 
-		int secondNum = rand() % 3 + 3;
-		int firstNum = integerCheck(secondNum);
+		int secondNum = rand() % 2 + 1;
+		int firstNum = rand() % 10 + 1;
+		firstNum = (firstNum * 2 * 2 * 2);
 
 		cout << "Question" << i << " ::  " << firstNum << " >> " << secondNum << " = ";
 		int numInput;
@@ -91,5 +103,18 @@ int main()
 		if (j == 2) break;
 
 		score += 10;
+	}
+	/* Level 2 */
+
+	for (int Y = 1; j != 2 && Y != 2; Y++)
+	{
+		cout << "LEVEL 2 : Bitwise & Quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+		for (int i = 1; i <= 5; i++)
+		{
+			srand(time(0));
+			int H = rand() % 10;
+			int K = rand() % 10;
+			cout << "Question" << i << " ::  " << toBinary(H) << " & " << toBinary(K) << " = ";
+		}
 	}
 }
