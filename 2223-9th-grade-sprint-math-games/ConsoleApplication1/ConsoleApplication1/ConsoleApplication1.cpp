@@ -151,6 +151,12 @@ int main()
 			score += 10;
 		}
 	}
-	
+	/* Game Over */
+	{
+		if (j == 2)
+		{
+			cout << "\n\nGAME OVER!!!!!\nYour Score (( " << score << " ))\n\n";
+		}
+	}
 
 }
