@@ -58,7 +58,7 @@ int main()
 
 	}
 	/* Level 1 */
-	cout << "LEVEL 1 : Right shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+	cout << "LEVEL 1 : Left shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
 	for (int i = 1; i <= 3; i++)
 	{
 		srand(time(0));
@@ -104,23 +104,23 @@ int main()
 		score += 10;
 	}
 	/* Level 2 */
-	int A, B;
 	for (int Y = 1; j != 2 && Y != 2; Y++)
 	{
-		cout << "LEVEL 2 : Bitwise & Quiz ( YOU HAVE ONLY 15 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
-		for (int i = 1; i <= 5; i++)
+		cout << "LEVEL 2 : Right shift bitwise operator quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
+		for (int i = 1; i <= 3; i++)
 		{
 			srand(time(0));
-			int H = rand() % 10;
-			int K = rand() % 10;
-			cout << "Question" << i << " ::  " << toBinary(H) << " & " << toBinary(K) << " = ";
-			A = toBinary(H);
-			B = toBinary(K);
+
+			int secondNum = rand() % 2 + 1;
+			int firstNum = rand() % 10 + 1;
+
+			cout << "Question" << i << " ::  " << firstNum << " << " << secondNum << " = ";
 			int numInput;
 			time_t start = time(0);
+			int y = 10;
 			while (!_kbhit())
 			{
-				if (abs(time(0) - start) > 15)
+				if (abs(time(0) - start) > 10)
 				{
 					j = 1;
 					break;
@@ -134,12 +134,12 @@ int main()
 			else
 			{
 				cin >> numInput;
-				if ((time(0) - start) > 15)
+				if ((time(0) - start) > 10)
 				{
 					cout << "Time's Up!!";
 					j = 2;
 				}
-				else if (numInput == (A & B)) cout << " Good Job!!!!\n\n";
+				else if (numInput == (firstNum << secondNum)) cout << "Good Job!!\n\n";
 				else
 				{
 					cout << "Wrong Answer!!";
@@ -147,7 +147,10 @@ int main()
 				}
 			}
 			if (j == 2) break;
+
 			score += 10;
 		}
 	}
-	}
+	
+
+}
