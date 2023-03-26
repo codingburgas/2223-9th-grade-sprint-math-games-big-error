@@ -105,16 +105,51 @@ int main()
 		score += 10;
 	}
 	/* Level 2 */
-
+	int A, B;
 	for (int Y = 1; j != 2 && Y != 2; Y++)
 	{
 		cout << "LEVEL 2 : Bitwise & Quiz ( YOU HAVE ONLY 10 SECONDS TO SOLVE EACH QUESTION )\n-----------------------------------------------------------------------\n\n";
-		for (int i = 1; i <= 5; i++)
+		for (int i = 1; i < 2; i++)
 		{
 			srand(time(0));
 			int H = rand() % 10;
 			int K = rand() % 10;
 			cout << "Question" << i << " ::  " << toBinary(H) << " & " << toBinary(K) << " = ";
+			A = toBinary(H);
+			B = toBinary(K);
 		}
+		int numInput;
+		time_t start = time(0);
+		int y = 5;
+		while (!_kbhit())
+		{
+			if (abs(time(0) - start) > 5)
+			{
+				j = 1;
+				break;
+			}
+		}
+		if (j == 1)
+		{
+			cout << "Time's Up!!";
+			j = 2;
+		}
+		else
+		{
+			cin >> numInput;
+			if ((time(0) - start) > 5)
+			{
+				cout << "Time's Up!!";
+				j = 2;
+			}
+			else if (numInput == (A & B)) cout << " Good Job!!!!\n\n";
+			else
+			{
+				cout << "Wrong Answer!!";
+				j = 2;
+			}
+		}
+		if (j == 2) break;
+		score += 10;
 	}
-}
+	}
